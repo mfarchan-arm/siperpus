@@ -17,7 +17,7 @@
         rel="stylesheet" />
     <link rel="icon" type="image/png" href="{{ asset('storage/images/logo.png') }}" />
     <link rel="stylesheet" href="/css/styles.css">
-    <title>SIPerpus | SMP Negeri 1 Kota Bengkulu</title>
+    <title>SIPerpus | SD Negeri 69 Kota Bengkulu</title>
 </head>
 
 

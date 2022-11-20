@@ -20,7 +20,7 @@
                             </div>
                             <div class="col-10">
                                 <h6 style="font-size: 12pt; font-weight:bold; line-height: 0.5;">
-                                    <center>SMP NEGERI 1 KOTA BENGKULU</center>
+                                    <center>SD Negeri 69 Kota Bengkulu</center>
                                 </h6>
                                 <h6 style="font-size: 8pt;">
                                     <center>Jl. Jendral. Sudirman, Tengah Padang, Kec. Tlk. Segara, Kota Bengkulu,
@@ -56,7 +56,7 @@
                                             <th>:</th>
                                             <th>{{ $member->nisn }}</th>
                                         </tr>
-                                
+
                                         <tr>
                                             <th>Jenis Kelamin</th>
                                             <th>:</th>
@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-10">
                                 <h6 style="font-size: 12pt; font-weight:bold; line-height: 0.5;">
-                                    <center>SMP NEGERI 1 KOTA BENGKULU</center>
+                                    <center>SD Negeri 69 Kota Bengkulu</center>
                                 </h6>
                                 <h6 style="font-size: 8pt;">
                                     <center>Jl. Jendral. Sudirman, Tengah Padang, Kec. Tlk. Segara, Kota Bengkulu,

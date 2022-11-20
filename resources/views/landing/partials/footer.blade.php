@@ -24,9 +24,8 @@
     }
 
     footer {
-        background-image: linear-gradient(to right, rgb(41, 108, 253), rgb(25, 46, 108));
+        background-image: linear-gradient(to right, #54B435, #54B435);
     }
-
 </style>
 
 <!-- FOOTER -->
@@ -35,9 +34,9 @@
         <div class="row gy-4 gx-5">
             <div class="col-lg-8 col-md-6">
                 <h5 class="h1 text-white">SIPerpus</h5>
-                <p class="small text-white">Sistem Informasi Perpustakaan SMP Negeri 1 Kota Bengkulu.</p>
-                <p class="small text-white">Jl. Jendral. Sudirman, Tengah Padang, Kec. Teluk Segara, Kota Bengkulu,
-                    Bengkulu 38114</p>
+                <p class="small text-white">Sistem Informasi Perpustakaan SD Negeri 69 Kota Bengkulu.</p>
+                <p class="small text-white">Jl. WR. Supratman, Kandang Limun, Kec. Muara Bangka Hulu, Kota
+                    Bengkulu, Bengkulu 38119</p>
                 <p class="small text-white mb-0">&copy; Copyrights. All rights reserved. <a class="text-white"
                         href="/">SIPerpus</a></p>
             </div>
@@ -62,12 +61,9 @@
             <div class="col-lg-4 col-md-6">
                 <h5 class="text-white mb-3">Media Sosial</h5>
                 <p class="small text-white">Klik tombol media sosial di bawah untuk terhubung dengan kami.</p>
-                <a href="https://www.instagram.com/smpnegeri.1__/"><i class="bi bi-instagram px-3"
-                        style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a>
-                <a href="https://smpn1kotabengkulu.sch.id/"><i class="bi bi-globe"
-                        style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a>
-                <a href="mailto:rsbismpngr1bkl@yahoo.com"><i class="bi bi-envelope px-3"
-                        style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a>
+                <a href="#"><i class="bi bi-instagram px-3" style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a>
+                <a href="#"><i class="bi bi-globe" style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a>
+                <a href="#"><i class="bi bi-envelope px-3" style="font-size: 2rem; color: rgb(255, 255, 255);"></i></a>
             </div>
         </div>
     </div>

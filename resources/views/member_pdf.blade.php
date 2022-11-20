@@ -16,8 +16,8 @@
     </style>
 
     <center>
-        <h5>Laporan Anggota SMP Negeri 1 Kota Bengkulu</h4>
-            <h6>Jl. Jendral. Sudirman, Tengah Padang, Kec. Tlk. Segara, Kota Bengkulu, Bengkulu 38114
+        <h5>Laporan Anggota SD Negeri 69 Kota Bengkulu</h4>
+            <h6>Jl. WR. Supratman, Kandang Limun, Kec. Muara Bangka Hulu, Kota Bengkulu, Bengkulu 38119
         </h5>
     </center>
 
@@ -35,15 +35,15 @@
         </thead>
         <tbody>
             @foreach ($members as $member)
-                <tr>
-                    <td>{{ $member->nama }}</td>
-                    <td>{{ $member->tmpt_lahir }}</td>
-                    <td>{{ $member->tgl_lahir }}</td>
-                    <td>{{ $member->jns_kelamin }}</td>
-                    <td>{{ $member->alamat }}</td>
-                    <td>{{ $member->no_hp }}</td>
-                    <td>{{ $member->jns_anggota }}</td>
-                </tr>
+            <tr>
+                <td>{{ $member->nama }}</td>
+                <td>{{ $member->tmpt_lahir }}</td>
+                <td>{{ $member->tgl_lahir }}</td>
+                <td>{{ $member->jns_kelamin }}</td>
+                <td>{{ $member->alamat }}</td>
+                <td>{{ $member->no_hp }}</td>
+                <td>{{ $member->jns_anggota }}</td>
+            </tr>
             @endforeach
         </tbody>
     </table>
