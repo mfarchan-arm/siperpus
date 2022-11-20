@@ -15,8 +15,8 @@
         }
     </style>
     <center>
-        <h5>Laporan Buku SMP Negeri 1 Kota Bengkulu</h4>
-            <h6>Jl. Jendral. Sudirman, Tengah Padang, Kec. Tlk. Segara, Kota Bengkulu, Bengkulu 38114
+        <h5>Laporan Buku SD Negeri 69 Kota Bengkulu</h4>
+            <h6>Jl. WR. Supratman, Kandang Limun, Kec. Muara Bangka Hulu, Kota Bengkulu, Bengkulu 38119
         </h5>
     </center>
     <table class='table table-bordered'>
@@ -33,16 +33,16 @@
         </thead>
         <tbody>
             @foreach ($books as $book)
-                <tr>
+            <tr>
 
-                    <td>{{ $book->rak->kategori ?? 'None' }}</td>
-                    <td>{{ $book->judul }}</td>
-                    <td>{{ $book->pengarang }}</td>
-                    <td>{{ $book->penerbit }}</td>
-                    <td>{{ $book->thn_terbit }}</td>
-                    <td>{{ $book->eksemplar }}</td>
+                <td>{{ $book->rak->kategori ?? 'None' }}</td>
+                <td>{{ $book->judul }}</td>
+                <td>{{ $book->pengarang }}</td>
+                <td>{{ $book->penerbit }}</td>
+                <td>{{ $book->thn_terbit }}</td>
+                <td>{{ $book->eksemplar }}</td>
 
-                </tr>
+            </tr>
             @endforeach
         </tbody>
     </table>

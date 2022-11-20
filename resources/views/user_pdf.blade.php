@@ -16,8 +16,8 @@
     </style>
 
     <center>
-        <h5>Laporan Petugas SMP Negeri 1 Kota Bengkulu</h4>
-            <h6>Jl. Jendral. Sudirman, Tengah Padang, Kec. Tlk. Segara, Kota Bengkulu, Bengkulu 38114
+        <h5>Laporan Petugas SD Negeri 69 Kota Bengkulu</h4>
+            <h6>Jl. WR. Supratman, Kandang Limun, Kec. Muara Bangka Hulu, Kota Bengkulu, Bengkulu 38119
         </h5>
     </center>
 
@@ -37,15 +37,15 @@
         <tbody>
             @php $i=1 @endphp
             @foreach ($users as $user)
-                <tr>
-                    <td>{{ $i++ }}</td>
-                    <td>{{ $user->nama }}</td>
-                    <td>{{ $user->jabatan }}</td>
-                    <td>{{ $user->alamat }}</td>
-                    <td>{{ $user->no_tlp }}</td>
-                    <td>{{ $user->email }}</td>
+            <tr>
+                <td>{{ $i++ }}</td>
+                <td>{{ $user->nama }}</td>
+                <td>{{ $user->jabatan }}</td>
+                <td>{{ $user->alamat }}</td>
+                <td>{{ $user->no_tlp }}</td>
+                <td>{{ $user->email }}</td>
 
-                </tr>
+            </tr>
             @endforeach
         </tbody>
     </table>
