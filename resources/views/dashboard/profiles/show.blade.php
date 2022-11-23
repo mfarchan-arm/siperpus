@@ -27,7 +27,7 @@
                             class="form-control" value="{{ $user->alamat }}" readonly></div>
 
                     <div class="col-md-12 mt-2"><label class="labels">Nomor Telepon</label><input type="text"
-                            class="form-control" value="{{ $user->alamat }}" readonly></div>
+                            class="form-control" value="{{ $user->no_tlp }}" readonly></div>
 
                     <div class="col-md-12 mt-2"><label class="labels">E-mail</label><input type="text"
                             class="form-control" value="{{ $user->email }}" readonly></div>

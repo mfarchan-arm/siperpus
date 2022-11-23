@@ -88,7 +88,7 @@
                                 <p class="mb-0">Password yang Baru</p>
                             </div>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="password" required autofocus>
+                                <input type="password" class="form-control" name="password" required autofocus>
                             </div>
                         </div>
                         <hr>

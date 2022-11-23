@@ -82,23 +82,25 @@ class ProfileController extends Controller
         $rules = [
             'id' => 'required',
             'nama' => 'required',
-            'nip' => 'required',
+            // 'nip' => 'required',
             'email' => 'required',
             'no_tlp' => 'required',
             'alamat' => 'required',
             'jabatan' => 'required',
             'password' => 'required',
-            'nama_gambar' => 'image|file|max:50000',
+            // 'nama_gambar' => 'image|file|max:50000',
         ];
 
         $validatedData = $request->validate($rules);
 
         if ($request->file('nama_gambar')) {
+            $request->validate(['nama_gambar' => 'image|file|max:50000',]);
             if ($user->nama_gambar) {
                 Storage::delete($user['nama_gambar']);
             }
-
-            $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
+            $imageName = time() . '.' . $request->file('nama_gambar')->getClientOriginalExtension();
+            $request->file('nama_gambar')->move(public_path('storage/images'), $imageName);
+            $validatedData['nama_gambar'] = $imageName;
         }
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::where('id', Auth::id())->update($validatedData);
