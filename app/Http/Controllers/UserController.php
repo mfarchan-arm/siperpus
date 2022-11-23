@@ -60,7 +60,9 @@ class UserController extends Controller
         ]);
 
         if ($request->file('nama_gambar')) {
-            $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
+            $imageName = time() . '.' . $request->file('nama_gambar')->getClientOriginalExtension();
+            $request->file('nama_gambar')->move(public_path('storage/images'), $imageName);
+            $validatedData['nama_gambar'] = $imageName;
         }
 
         $validatedData['password'] = Hash::make($validatedData['password']);
@@ -121,7 +123,9 @@ class UserController extends Controller
                 Storage::delete($user['nama_gambar']);
             }
 
-            $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
+            $imageName = time() . '.' . $request->file('nama_gambar')->getClientOriginalExtension();
+            $request->file('nama_gambar')->move(public_path('storage/images'), $imageName);
+            $validatedData['nama_gambar'] = $imageName;
         }
         $validatedData['password'] = Hash::make($validatedData['password']);
         User::where('id', $validatedData['id'])->update($validatedData);

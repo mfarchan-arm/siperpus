@@ -15,5 +15,14 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             </ul>
         </div>
+        <h5 class="justify-content-center mx-3 text-white mt-2">Hai, {{ auth()->user()->nama }}</h5>
+        <p class="text-white mx-3 mb-1">{{ auth()->user()->jabatan }}</p>
+        <div class="d-flex justify-content-center mx-2">
+            <form class="d-flex" action="/logout" method="post">
+                @csrf
+                <button class="btn btn-danger" type="submit">Keluar</button>
+            </form>
+
+        </div>
     </div>
 </nav>

@@ -23,7 +23,8 @@
                                     <center>SD Negeri 69 Kota Bengkulu</center>
                                 </h6>
                                 <h6 style="font-size: 8pt;">
-                                    <center>Jl. WR. Supratman, Kandang Limun, Kec. Muara Bangka Hulu, Kota Bengkulu, Bengkulu 38119</center>
+                                    <center>Jl. WR. Supratman, Kandang Limun, Kec. Muara Bangka Hulu, Kota
+                                        Bengkulu, Bengkulu 38119</center>
                                 </h6>
                                 <h6 style="font-size: 10pt">
                                     <center>KARTU PETUGAS PERPUSTAKAAN</center>
@@ -75,7 +76,7 @@
                             </div>
                             <div class="col-3 justify-content-center" style="padding: 0px">
                                 <br>
-                                <img src="{{ asset('storage/' . $user->nama_gambar) }}" class="rounded"
+                                <img src="{{ asset('storage/images/' . $user->nama_gambar) }}" class="rounded"
                                     style="height: 3cm; width:3cm;">
                             </div>
                         </div>
@@ -97,7 +98,8 @@
                                     <center>SD Negeri 69 Kota Bengkulu</center>
                                 </h6>
                                 <h6 style="font-size: 8pt;">
-                                    <center>Jl. WR. Supratman, Kandang Limun, Kec. Muara Bangka Hulu, Kota Bengkulu, Bengkulu 38119</center>
+                                    <center>Jl. WR. Supratman, Kandang Limun, Kec. Muara Bangka Hulu, Kota
+                                        Bengkulu, Bengkulu 38119</center>
                                 </h6>
                                 <h6 style="font-size: 10pt">
                                     <center>KARTU PETUGAS PERPUSTAKAAN</center>
