@@ -59,7 +59,9 @@ class MemberController extends Controller
             'nama_gambar' => 'image|file|max:50000',
         ]);
         if ($request->file('nama_gambar')) {
-            $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
+            $imageName = time() . '.' . $request->file('nama_gambar')->getClientOriginalExtension();
+            $request->file('nama_gambar')->move(public_path('storage/images'), $imageName);
+            $validatedData['nama_gambar'] = $imageName;
         }
         Member::create($validatedData);
 
@@ -118,17 +120,23 @@ class MemberController extends Controller
             $rules['no_hp'] = 'required|unique:members';
         }
 
+        $validatedData = $request->validate($rules);
         if ($request->file('nama_gambar')) {
-            $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
+            $imageName = time() . '.' . $request->file('nama_gambar')->getClientOriginalExtension();
+            // $request->file('nama_gambar')->move(public_path('storage/images'), $imageName);
+            $validatedData['nama_gambar'] = $imageName;
         }
 
         if ($request->file('nama_gambar')) {
             if ($member->nama_gambar) {
                 Storage::delete($member['nama_gambar']);
             }
-            $validatedData['nama_gambar'] = $request->file('nama_gambar')->store('images');
+            $imageName = time() . '.' . $request->file('nama_gambar')->getClientOriginalExtension();
+            $request->file('nama_gambar')->move(public_path('storage/images'), $imageName);
+            $validatedData['nama_gambar'] = $imageName;
         }
-        $validatedData = $request->validate($rules);
+        // dd($validatedData);
+
         Member::where('id', $validatedData['id'])->update($validatedData);
 
         return redirect('/dashboard/members')->with('success', 'Anggota telah diubah!.');
