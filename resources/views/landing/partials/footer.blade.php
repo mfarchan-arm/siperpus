@@ -24,7 +24,7 @@
     }
 
     footer {
-        background-image: linear-gradient(to right, #54B435, #54B435);
+        background-image: linear-gradient(to right, #5e72e4, #5e72e4);
     }
 </style>
 

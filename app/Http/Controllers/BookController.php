@@ -26,6 +26,7 @@ class BookController extends Controller
                 ->filter(request(['search']))
                 ->paginate(10)
                 ->withQueryString(),
+            'count' => Book::get()->count(),
         ]);
     }
 
@@ -52,7 +53,7 @@ class BookController extends Controller
     {
         $validatedData = $request->validate([
             'rak_id' => 'required',
-            'judul' => 'required|unique:books',
+            'judul' => 'required',
             'no_barcode' => 'required|unique:books',
             'pengarang' => 'required',
             'penerbit' => 'required',

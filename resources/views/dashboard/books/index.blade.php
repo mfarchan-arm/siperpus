@@ -74,6 +74,11 @@
 <div class="row">
     <div class="col">
         <div class="card">
+            {{-- @php
+            $currentpage = request('page')?request('page'):1;
+            $i = 1 + (10 * ( $currentpage- 1))
+            @endphp
+            <h6>Show {{ $i}} of {{ $count }}</h6> --}}
             <div class="table-responsive">
                 <table class="table table-bordered align-items-center mb-0">
                     <thead>
@@ -128,7 +133,7 @@
 </div>
 <div class="row">
     <div class="col">
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center ">
             {{ $books->links() }}
         </div>
     </div>
