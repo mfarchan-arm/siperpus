@@ -41,6 +41,11 @@
         <div class="card">
             <div class="table-responsive">
                 <table class="table table-bordered align-items-center mb-0">
+                    {{-- @php
+                    $currentpage = request('page')?request('page'):1;
+                    $i = 1 + (10 * ( $currentpage- 1))
+                    @endphp
+                    <h6>Show {{ $i}} of {{ $count }}</h6> --}}
                     <thead>
                         <tr>
                             <th scope="col">#</th>

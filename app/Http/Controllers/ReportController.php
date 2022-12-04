@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Member;
 use App\Models\Transaction;
 use PDF;
+use Illuminate\Support\Facades\DB;
 
 class ReportController extends Controller
 {
@@ -18,8 +19,32 @@ class ReportController extends Controller
      */
     public function index()
     {
+        $transaksi = Transaction::select(DB::raw("(count(id)) as banyak"), DB::raw("(DATE_FORMAT(tgl_pinjam, '%M-%Y')) as month_year"))
+            ->orderBy('tgl_pinjam')
+            ->groupBy(DB::raw("DATE_FORMAT(tgl_pinjam, '%M-%Y')"))
+            ->get();
+
+        foreach ($transaksi as $index) {
+            // date("m",strtotime($index['month_year']));
+            $labeltransaksi[] = date("M Y", strtotime($index['month_year']));
+            $banyaktransaksi[] = $index['banyak'];
+        }
+        $buku = Book::select(DB::raw("(count(id)) as banyak"), DB::raw("(DATE_FORMAT(created_at, '%M-%Y')) as month_year"))
+            ->orderBy('created_at')
+            ->groupBy(DB::raw("DATE_FORMAT(created_at, '%M-%Y')"))
+            ->get();
+
+        foreach ($buku as $index) {
+            // date("m",strtotime($index['month_year']));
+            $labelbuku[] = date("M Y", strtotime($index['month_year']));
+            $banyakbuku[] = $index['banyak'];
+        }
         return view('dashboard.reports.index', [
             'active' => 'reports',
+            'labeltransaksi' => json_encode($labeltransaksi),
+            'banyaktransaksi' => $banyaktransaksi,
+            'labelbuku' => json_encode($labelbuku),
+            'banyakbuku' => $banyakbuku,
         ]);
     }
 
@@ -38,7 +63,7 @@ class ReportController extends Controller
         $pdf = PDF::loadview('user_pdf', ['users' => $users]);
         return $pdf->download('laporan-user.pdf');
     }
-    
+
     public function members()
     {
         $members = Member::all();

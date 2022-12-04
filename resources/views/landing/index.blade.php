@@ -5,7 +5,7 @@
     .loadding-page {
         width: 100%;
         height: 100%;
-        background: #54B435;
+        background: #5e72e4;
         overflow: hidden;
         position: fixed;
         top: 0;

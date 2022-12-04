@@ -1,11 +1,11 @@
 <style>
     .navbar {
-        background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #54B435);
+        background-image: linear-gradient(to right, rgba(255, 0, 0, 0), #5e72e4);
 
     }
 </style>
 
-<nav class="navbar fixed-top navbar-dark navbar-expand-lg" style="background-color: #54B435;">
+<nav class="navbar fixed-top navbar-dark navbar-expand-lg" style="background-color: #5e72e4;">
     <div class="container-fluid px-4">
         <a class="navbar-brand mb-0 h1" href="/">SIPerpus</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

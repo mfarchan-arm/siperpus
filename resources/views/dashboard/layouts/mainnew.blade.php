@@ -22,7 +22,7 @@
         rel="stylesheet" /> --}}
 
     <link rel="icon" type="image/png" href="{{ asset('storage/images/logo.png') }}" />
-    <link rel="stylesheet" href="/css/styles.css">
+    {{-- <link rel="stylesheet" href="/css/styles.css"> --}}
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

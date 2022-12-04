@@ -196,7 +196,7 @@
         // labels: [datalabel],
         labels: <?php echo $label ?>,
         datasets: [{
-          label: "Mobile apps",
+          label: "Transaksi",
           tension: 0.4,
           borderWidth: 0,
           pointRadius: 0,

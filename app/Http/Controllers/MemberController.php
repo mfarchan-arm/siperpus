@@ -24,6 +24,7 @@ class MemberController extends Controller
                 ->paginate(10)
                 ->withQueryString(),
             'active' => 'members',
+            'count' => Member::get()->count(),
         ]);
     }
 
