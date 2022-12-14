@@ -7,6 +7,7 @@ use App\Models\Rak;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Imports\BookImport;
+use App\Models\Transaction;
 use Maatwebsite\Excel\Facades\Excel;
 use Session;
 use Illuminate\Http\Request;
@@ -129,6 +130,9 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
+        if(Transaction::where('book_id',$book->id)->count() != 0){
+            return redirect('/dashboard/books')->with('failed', 'Gagal hapus buku karena terdapat transaksi !');
+        }
         Book::destroy($book->id);
 
         return redirect('/dashboard/books')->with('success', 'Buku telah dihapus.');

@@ -22,6 +22,7 @@ class TransactionController extends Controller
         return view('dashboard.transactions.index', [
             'active' => 'transactions',
             'transactions' => Transaction::latest()->paginate(7),
+            'count' => Transaction::get()->count(),
         ]);
     }
 
@@ -77,6 +78,14 @@ class TransactionController extends Controller
         return redirect('/dashboard/transactions')->with('success', 'Transaksi telah selesai.');
     }
 
+    public function proseshapus(Request $request)
+    {
+        Transaction::where('id', $request['id'])->update([]);
+        Book::find($request->book_id)->increment('eksemplar', $request['jml_pinjam']);
+        Transaction::where('id', $request['id'])->delete([]);
+        return redirect('/dashboard/transactions')->with('success', 'Transaksi berhasil dihapus.');
+    }
+
     /**
      * Display the specified resource.
      *
@@ -97,6 +106,22 @@ class TransactionController extends Controller
     public function pengembalian(Request $request)
     {
         return view('dashboard.transactions.return', [
+            'books' => Book::all(),
+            'members' => Member::all(),
+            'transaction' => Transaction::where('id', $request->id)->first(),
+            'active' => 'transactions',
+        ]);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Transaction  $transaction
+     * @return \Illuminate\Http\Response
+     */
+    public function hapus(Request $request)
+    {
+        return view('dashboard.transactions.delete', [
             'books' => Book::all(),
             'members' => Member::all(),
             'transaction' => Transaction::where('id', $request->id)->first(),

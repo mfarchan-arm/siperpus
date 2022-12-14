@@ -149,7 +149,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Denda Rp.2000/Hari(Maksimal 7 Hari Peminjaman) </p>
+                                <p class="mb-0">Denda Rp.500/Hari(Maksimal 7 Hari Peminjaman) </p>
                             </div>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="denda" name="denda" required readonly>

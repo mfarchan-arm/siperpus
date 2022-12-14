@@ -13,7 +13,7 @@
 
         .account-block {
             padding: 0;
-            background-image: url(https://bootdey.com/img/Content/bg1.jpg);
+            background-image: url("{{ asset('storage/images/1.jpeg') }}");
             background-repeat: no-repeat;
             background-size: cover;
             height: 100%;
@@ -98,10 +98,10 @@
                                 <div class="account-block rounded-right">
                                     <div class="overlay rounded-right"></div>
                                     <div class="account-testimonial">
-                                        <h4 class="text-white mb-4">SIPerpus</h4>
+                                        <h4 class="text-white mb-4">SI Perpus</h4>
                                         <p class="lead text-white">"Kemudahan Aksesibilitas Perpustakaan dalam Genggaman"
                                         </p>
-                                        <p>- SIPerpus</p>
+                                        <p>- SI Perpus</p>
                                     </div>
                                 </div>
                             </div>

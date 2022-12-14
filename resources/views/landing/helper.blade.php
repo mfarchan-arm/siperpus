@@ -57,7 +57,7 @@
                         <p> Denda merupakan kebijakan perpustakaan yang diberikan kepada peminjam yang melakukan transaksi
                             peminjaman
                             melebihi batas waktu yang ditentukan, yaitu 7 hari.
-                            Denda akan dikenakan Rp.2000/hari keterlambatan. </p>
+                            Denda akan dikenakan Rp.500/hari keterlambatan. </p>
                     </div>
                 </div>
             </div>

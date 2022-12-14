@@ -39,12 +39,22 @@ class ReportController extends Controller
             $labelbuku[] = date("M Y", strtotime($index['month_year']));
             $banyakbuku[] = $index['banyak'];
         }
+        if($buku->first() == NULL){
+            $labelbuku = NULL;
+            $banyakbuku = NULL;
+        }
+        if($transaksi->first() == NULL){
+            $labeltransaksi = NULL;
+            $banyaktransaksi = NULL;
+        }
         return view('dashboard.reports.index', [
             'active' => 'reports',
             'labeltransaksi' => json_encode($labeltransaksi),
             'banyaktransaksi' => $banyaktransaksi,
             'labelbuku' => json_encode($labelbuku),
             'banyakbuku' => $banyakbuku,
+            'dateawal' => Transaction::min('tgl_pinjam'),
+            'dateakhir' => Transaction::max('tgl_pinjam'),
         ]);
     }
 
@@ -84,14 +94,5 @@ class ReportController extends Controller
 
         $pdf = PDF::loadview('transactions_pdf', ['transactions' => $transactions]);
         return $pdf->download('laporan-transactions.pdf');
-    }
-
-    public function confirm()
-    {
-        return view('dashboard.reports.confirm', [
-            'dateawal' => Transaction::min('tgl_pinjam'),
-            'dateakhir' => Transaction::max('tgl_pinjam'),
-            'active' => 'reports',
-        ]);
     }
 }

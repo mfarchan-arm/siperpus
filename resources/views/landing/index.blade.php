@@ -245,7 +245,8 @@
 </style>
 <style>
     .masthead {
-        background-image: url("{{ asset('storage/images/1.jpg') }}") !important;
+        background-image: url("{{ asset('storage/images/1.jpeg') }}") !important;
+        filter:brightness(90%);
     }
 </style>
 <div class="loadding-page">
@@ -259,8 +260,9 @@
 <header class="masthead text-center text-white">
     <div class="masthead-content">
         <div class="container px-5">
-            <h1 class="masthead-heading mb-0">SIPerpus</h1>
-            <h2 class="masthead-subheading mb-0">Sistem Informasi Perpustakaan SD Negeri 69 Kota Bengkulu</h2>
+            <h1 class="masthead-heading mb-0">SI Perpus</h1>
+            <h2 class="masthead-subheading mb-0">Sistem Informasi Perpustakaan</h2>
+            <h2 class="masthead-subheading mb-0">SD Negeri 69 Kota Bengkulu</h2>
             <a class="btn btn-primary btn-xl rounded-pill mt-5" href="#scroll">Klik di Sini</a>
         </div>
     </div>
@@ -269,7 +271,7 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('storage/images/1.jpg') }}" />
+                <div class="p-5"><img class="img-fluid rounded" src="{{ asset('storage/images/1.jpeg') }}" />
                 </div>
             </div>
             <div class="col-lg-6 order-lg-1">
@@ -288,7 +290,7 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('storage/images/logo.png') }}" />
+                <div class="p-5"><img class="img-fluid" src="{{ asset('storage/images/logo.png') }}" />
                 </div>
             </div>
             <div class="col-lg-6">
@@ -305,7 +307,7 @@
     <div class="container px-5">
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6 order-lg-2">
-                <div class="p-5"><img class="img-fluid rounded-circle" src="{{ asset('storage/images/2.jpg') }}"
+                <div class="p-5"><img class="img-fluid rounded" src="{{ asset('storage/images/2.jpeg') }}"
                         alt="..." />
                 </div>
             </div>

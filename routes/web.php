@@ -50,11 +50,14 @@ Route::get('/dashboard/reports/books', [ReportController::class, 'books'])->midd
 Route::get('/dashboard/reports/users', [ReportController::class, 'users'])->middleware('auth');
 Route::get('/dashboard/reports/members', [ReportController::class, 'members'])->middleware('auth');
 
-Route::get('/dashboard/reports/confirm/transactions', [ReportController::class, 'confirm'])->middleware('auth');
-Route::post('/dashboard/reports/confirm/transactions', [ReportController::class, 'transactions'])->middleware('auth');
+Route::get('/dashboard/reports/transactions', [ReportController::class, 'transactions'])->middleware('auth');
+Route::post('/dashboard/reports/transactions', [ReportController::class, 'transactions'])->middleware('auth');
 
 Route::post('/dashboard/transactions/createpengembalian', [TransactionController::class, 'pengembalian'])->middleware('auth');
 Route::post('/dashboard/transactions/prosespengembalian', [TransactionController::class, 'prosespengembalian'])->middleware('auth');
+
+Route::post('/dashboard/transactions/hapus', [TransactionController::class, 'hapus'])->middleware('auth');
+Route::post('/dashboard/transactions/proseshapus', [TransactionController::class, 'proseshapus'])->middleware('auth');
 
 //Print
 Route::post('/dashboard/users/print', [PrintController::class, 'print_user'])->middleware('auth');

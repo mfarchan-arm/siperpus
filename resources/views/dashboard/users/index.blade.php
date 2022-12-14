@@ -37,62 +37,69 @@
         <a href="/dashboard/users/create" class="btn btn-lg btn-primary mx-4">Tambah Petugas</a>
     </div>
 </div>
-<div class="row">
-    <div class="col">
-        <div class="card">
-            <div class="table-responsive">
-                <table class="table table-bordered align-items-center mb-0">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Nama Lengkap</th>
-                            <th scope="col">NIP</th>
-                            <th scope="col">Jabatan</th>
-                            <th scope="col">Alamat</th>
-                            <th scope="col">Nomor Telepon</th>
-                            <th scope="col">E-mail</th>
-                            <th scope="col">Foto Profil</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            @foreach ($users as $key => $user)
-                            <td class="align-middle text-center">{{ $users->firstItem() + $key }}</td>
-                            <td>{{ $user->nama }}</td>
-                            <td>{{ $user->nip }}</td>
-                            <td>{{ $user->jabatan }}</td>
-                            <td>{{ $user->alamat }}</td>
-                            <td>{{ $user->no_tlp }}</td>
-                            <td>{{ $user->email }}</td>
-                            <td><img class="rounded-circle" width="100px"
-                                    src="{{ asset('storage/images/' . $user->nama_gambar) }}">
-                            </td>
-                            <td>
-                                <a href="/dashboard/users/{{ $user->id }}/edit"
-                                    class="badge bg-warning border-0">Edit</a>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-bordered align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nama Lengkap</th>
+                                <th scope="col">NIP</th>
+                                <th scope="col">Jabatan</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">Nomor Telepon</th>
+                                <th scope="col">E-mail</th>
+                                <th scope="col">Foto Profil</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                @foreach ($users as $key => $user)
+                                <td class="align-middle text-center">{{ $users->firstItem() + $key }}</td>
+                                <td>{{ $user->nama }}</td>
+                                <td>{{ $user->nip }}</td>
+                                <td>{{ $user->jabatan }}</td>
+                                <td>{{ $user->alamat }}</td>
+                                <td>{{ $user->no_tlp }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td><img class="rounded-circle" width="100px"
+                                        src="{{ asset('storage/images/' . $user->nama_gambar) }}">
+                                </td>
+                                <td>
+                                    <a href="/dashboard/users/{{ $user->id }}/edit"
+                                        class="badge bg-warning border-0">Edit</a>
 
-                                <form action="/dashboard/users/print" method="post" class="d-inline" target="_blank">
-                                    @csrf
-                                    <input type='hidden' name='id' value='{{ $user->id }}'>
-                                    <button class="badge bg-primary border-0"
-                                        onclick="return confirm('Cetak Kartu?')">Cetak
-                                        Kartu</button>
-                                </form>
+                                    <form action="/dashboard/users/print" method="post" class="d-inline" target="_blank">
+                                        @csrf
+                                        <input type='hidden' name='id' value='{{ $user->id }}'>
+                                        <button class="badge bg-primary border-0"
+                                            onclick="return confirm('Cetak Kartu?')">Cetak
+                                            Kartu</button>
+                                    </form>
 
-                                <form action="/dashboard/users/{{ $user->id }}" method="post" class="d-inline">
-                                    @method('delete')
-                                    @csrf
-                                    <button class="badge bg-danger border-0"
-                                        onclick="return confirm('Anda Yakin?')">Hapus</button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                                    <form action="/dashboard/users/{{ $user->id }}" method="post" class="d-inline">
+                                        @method('delete')
+                                        @csrf
+                                        <button class="badge bg-danger border-0"
+                                            onclick="return confirm('Anda Yakin?')">Hapus</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
+        @php
+        $currentpage = request('page')?request('page'):1;
+        $i = 1 + (10 * ( $currentpage- 1))
+        @endphp
+        <h6 class="mt-3 ml-2">Show {{ $i}} of {{ $count }}</h6>
     </div>
 </div>
 <div class="d-flex justify-content-center">

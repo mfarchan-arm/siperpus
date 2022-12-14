@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -25,6 +26,7 @@ class UserController extends Controller
                 ->paginate(10)
                 ->withQueryString(),
             'active' => 'users',
+            'count' => User::get()->count(),
         ]);
     }
 
@@ -141,6 +143,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+        
         if ($user->nama_gambar) {
             Storage::delete($user['nama_gambar']);
         }

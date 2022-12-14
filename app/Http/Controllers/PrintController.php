@@ -16,7 +16,7 @@ class PrintController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     //PRINT KARTU PETUGAS
+    //PRINT KARTU PETUGAS
     public function print_user(Request $request)
     {
         return view('dashboard.print.printuser', [

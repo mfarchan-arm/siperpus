@@ -19,6 +19,7 @@ class RakController extends Controller
         return view('dashboard.raks.index', [
             'active' => 'raks',
             'raks' => Rak::latest()->paginate(7),
+            'count' => Rak::get()->count(),
         ]);
     }
 
@@ -106,6 +107,9 @@ class RakController extends Controller
      */
     public function destroy(Rak $rak)
     {
+        if(Book::where('rak_id',$rak->id)->count() != 0){
+            return redirect('/dashboard/raks')->with('failed', 'Gagal hapus kategori karena data masih digunakan!');
+        }
         Rak::destroy($rak->id);
         Book::where('rak_id', $rak->id)->delete();
         return redirect('/dashboard/raks')->with('success', 'Kategori Rak telah dihapus.');

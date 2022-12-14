@@ -7,7 +7,7 @@
 
 <nav class="navbar fixed-top navbar-dark navbar-expand-lg" style="background-color: #5e72e4;">
     <div class="container-fluid px-4">
-        <a class="navbar-brand mb-0 h1" href="/">SIPerpus</a>
+        <a class="navbar-brand mb-0 h1" href="/">SI Perpus</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

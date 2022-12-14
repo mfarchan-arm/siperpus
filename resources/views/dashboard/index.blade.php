@@ -60,7 +60,7 @@
                                 <p class="mb-4 "><span class="text-primary font-italic me-1">Data</span>
                                     Petugas
                                 </p>
-                                <h2 class="text-right"><i class="bi bi-book"></i>
+                                <h2 class="text-right"><i class="bi bi-person"></i>
                                     <span class="count2" data-from="0" data-to="{{ $countuser }}"
                                         data-time="2000">0</span>
                                 </h2>
@@ -78,7 +78,7 @@
                                 <p class="mb-4 "><span class="text-primary font-italic me-1">Data</span>
                                     Anggota
                                 </p>
-                                <h2 class="text-right"><i class="bi bi-book"></i>
+                                <h2 class="text-right"><i class="bi bi-people"></i>
                                     <span class="count3" data-from="0" data-to="{{ $countmember }}"
                                         data-time="2000">0</span>
                                 </h2>
@@ -96,7 +96,7 @@
                                 <p class="mb-4 "><span class="text-primary font-italic me-1">Data</span>
                                     Transaksi
                                 </p>
-                                <h2 class="text-right"><i class="bi bi-book"></i>
+                                <h2 class="text-right"><i class="bi bi-receipt-cutoff"></i>
                                     <span class="count4" data-from="0" data-to="{{ $counttransaction }}"
                                         data-time="2000">0</span>
                                 </h2>

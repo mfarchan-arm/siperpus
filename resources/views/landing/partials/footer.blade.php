@@ -33,12 +33,12 @@
     <div class="container py-4 ">
         <div class="row gy-4 gx-5">
             <div class="col-lg-8 col-md-6">
-                <h5 class="h1 text-white">SIPerpus</h5>
+                <h5 class="h1 text-white">SI Perpus</h5>
                 <p class="small text-white">Sistem Informasi Perpustakaan SD Negeri 69 Kota Bengkulu.</p>
                 <p class="small text-white">Jl. WR. Supratman, Kandang Limun, Kec. Muara Bangka Hulu, Kota
                     Bengkulu, Bengkulu 38119</p>
                 <p class="small text-white mb-0">&copy; Copyrights. All rights reserved. <a class="text-white"
-                        href="/">SIPerpus</a></p>
+                        href="/">SI Perpus</a></p>
             </div>
             {{-- <div class="col-lg-2 col-md-6">
                 <h5 class="text-white mb-3">Quick links</h5>

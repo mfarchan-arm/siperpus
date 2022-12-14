@@ -101,7 +101,7 @@ class LandingController extends Controller
 
             return redirect()
                 ->intended('/dashboard')
-                ->with('success', 'Selamat Datang di Dashboard SIPerpus!');
+                ->with('success', 'Selamat Datang di Dashboard SI Perpus!');
         }
 
         return back()->with('loginError', 'E-mail/Password Anda Salah, Coba Lagi!');

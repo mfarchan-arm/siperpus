@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use App\Http\Requests\StoreMemberRequest;
 use App\Http\Requests\UpdateMemberRequest;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -151,6 +152,9 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
+        if (Transaction::where('member_id', $member->id)->count() != 0) {
+            return redirect('/dashboard/members')->with('failed', 'Gagal hapus anggota karena terdapat transaksi !');
+        }
         if ($member->nama_gambar) {
             Storage::delete($member['nama_gambar']);
         }

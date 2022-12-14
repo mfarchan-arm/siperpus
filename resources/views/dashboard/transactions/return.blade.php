@@ -4,7 +4,7 @@
 <div class="row py-5 justify-content-center">
     <div class="col-lg-10">
         <div class="card mb-4">
-            <div class="card-body">
+            <div class="card-body"> 
                 <form method="post" action="/dashboard/transactions/prosespengembalian">
                     @csrf
                     <div class="row">
@@ -96,8 +96,9 @@
                             </div>
                             <div class="col-sm-9">
                                 <input type="date" class="form-control" id="kembali" name="tgl_pengembalian"
-                                    value="<?php echo date('Y-m-d'); ?>" min="<?php
-                                            echo date('Y-m-d', strtotime($transaction->tgl_pinjam . ' + 7 day')); ?>"
+                                    value="<?php echo date('Y-m-d'); ?>" 
+                                    min="<?phpecho date('Y-m-d', strtotime($transaction->tgl_pinjam . ' + 7 day')); ?>" 
+                                    required readonly
                                     onchange="PinjamFunction()">
                             </div>
                         </div>
@@ -113,7 +114,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <p class="mb-0">Denda Rp.2000/Hari(Maksimal 7 Hari Peminjaman) </p>
+                                <p class="mb-0">Denda Rp.500/Hari(Maksimal 7 Hari Peminjaman) </p>
                             </div>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="denda" name="denda" required readonly>
@@ -128,6 +129,9 @@
     </div>
 </div>
 <script>
+    $(window).on('load', function() {
+    PinjamFunction();
+})
     function PinjamFunction() {
             var datepinjam = new Date($('#pinjam').val());
             var datekembali = new Date($('#kembali').val());
@@ -138,7 +142,7 @@
 
             if (Difference_In_Days > 7) {
                 var haridenda = Difference_In_Days - 7;
-                var denda = 2000 * haridenda;
+                var denda = 500 * haridenda;
                 document.getElementById("denda").value = denda;
             } else {
                 document.getElementById("denda").value = 0;

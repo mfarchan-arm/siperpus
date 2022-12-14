@@ -13,10 +13,16 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
+    @if (session()->has('failed'))
+    <div class="alert alert-danger alert-dismissible fade show text-white text-center" role="alert">
+        {{ session('failed') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    @endif
     <div class="card mb-3">
         <div class=" card-header">Data Kategori Rak</div>
         <div class="card-body">
-        </div>
+    </div>
         <a href="/dashboard/raks/create" class="btn btn-lg btn-primary mx-4">Tambah Kategori Rak</a>
     </div>
 
@@ -54,6 +60,11 @@
                     </table>
                 </div>
             </div>
+            @php
+            $currentpage = request('page')?request('page'):1;
+            $i = 1 + (10 * ( $currentpage- 1))
+            @endphp
+            <h6 class="mt-3 ml-2">Show {{ $i}} of {{ $count }}</h6>
         </div>
     </div>
     <div class="d-flex justify-content-center">

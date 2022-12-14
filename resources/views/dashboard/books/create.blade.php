@@ -102,8 +102,8 @@
                                 <p class="mb-0">Eksemplar</p>
                             </div>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="eksemplar"
-                                    placeholder="Masukkan Eksemplar..." required id="intTextBox2">
+                                <input type="number" min="0" class="form-control" name="eksemplar" 
+                                id="intTextBox2" placeholder="Masukkan Eksemplar..." required >
                             </div>
                         </div>
                         <hr>

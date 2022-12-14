@@ -17,14 +17,35 @@
         <div class=" card-header">Laporan</div>
         <div class="card-body">
             <div class="row justify-content-center">
-                <div class="col-12">
+                <div class="col-12 mb-4">
                     <a href="/dashboard/reports/books" class="btn btn-sm btn-primary">Cetak Laporan Buku</a>
                     <a href="/dashboard/reports/users" class="btn btn-sm btn-primary">Cetak Laporan Petugas</a>
                     <a href="/dashboard/reports/members" class="btn btn-sm btn-primary">Cetak Laporan Anggota</a>
-                    <a href="/dashboard/reports/confirm/transactions" class="btn btn-sm btn-primary">Cetak Laporan
-                        Transaksi</a>
                 </div>
-                <div class="col-12 mt-4 mb-md-0 mb-4">
+                <form method="post" action="/dashboard/reports/transactions">
+                  @csrf
+                  <div class="row">
+                    <div class="col-2">
+                      <div class="col">
+                        <p class="mb-0">Tanggal Awal</p>
+                      </div>
+                      <input type="date" class="form-control" id="kembali" name="tgl_awal" value="<?php echo date('Y-m-d'); ?>" min="{{ $dateawal }}" max="{{ $dateakhir }}">
+                    </div>
+                    <div class="col-2">
+                      <div class="col">
+                        <p class="mb-0">Tanggal Akhir</p>
+                      </div>
+                      <input type="date" class="form-control" id="kembali" name="tgl_akhir" value="<?php echo date('Y-m-d'); ?>" min="{{ $dateawal }}" max="{{ $dateakhir }}">
+                    </div>
+                    <div class="col-4">
+                      <div class="col">
+                        <p class="mb-4"></p>
+                      </div>
+                        <button class="btn btn-primary" type="submit">Cetak Laporan Transaksi</button>
+                      </div>
+                    </div>
+                </form>
+                <div class="col-6 mt-4 mb-md-0 mb-4">
                     <div class="card z-index-2 h-100">
                         <div class="card-header pb-0 pt-3 bg-transparent">
                             <h6 class="text-capitalize">Buku</h6>
@@ -40,7 +61,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 mt-4 mb-md-0 mb-4">
+                <div class="col-6 mt-4 mb-md-0 mb-4">
                     <div class="card z-index-2 h-100">
                         <div class="card-header pb-0 pt-3 bg-transparent">
                             <h6 class="text-capitalize">Transaksi</h6>
