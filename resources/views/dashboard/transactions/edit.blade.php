@@ -67,7 +67,7 @@
                         </div>
                         <div class="col-sm-9">
                             <input type="date" id="pinjam" class="form-control" name="tgl_pinjam"
-                                value="{{ $transaction->tgl_pinjam }}">
+                                value="{{ $transaction->tgl_pinjam }}" readonly>
                         </div>
                     </div>
                     <hr>

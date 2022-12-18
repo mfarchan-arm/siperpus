@@ -4,9 +4,8 @@
 <section class="mt-5 text-center container">
     <div class="row py-lg-5">
         <div class="col-lg-6 py-5 col-md-8 mx-auto">
-            <h1 class="font-weight-normal">OPAC</h1>
-            <p class=" text-muted">Jelajahi fitur OPAC dengan menggunakan fitur cari nama buku, fitur informasi buku
-                paket Kelas 1, 2, 3, 4, 5, dan 6</p>
+            <h1 class="font-weight-normal">Lihat Buku</h1>
+            <p class=" text-muted">Jelajahi fitur OPAC dengan menggunakan fitur cari nama buku, fitur informasi buku</p>
             <p>
             <div class="container mt-3">
                 <div class="row">
@@ -24,7 +23,7 @@
                     </div>
                 </form>
 
-                <a class="btn btn-warning" href="/opac/barcode"><i class="bi bi-search"> Scan Barcode</i></a>
+                <a class="btn btn-warning btn-l rounded-pill" href="/opac/barcode"><i class="bi bi-search"> Cari Buku</i></a>
 
             </div>
             </p>

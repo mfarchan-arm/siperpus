@@ -280,7 +280,7 @@
                     <p>OPAC adalah katalog terbuka yang dapat diakses secara publik oleh siswa SD Negeri 69 Kota
                         Bengkulu. OPAC memuat beragam katalog buku yang terdapat di perpustakaan. Klik di bawah ini
                         untuk mempelajari lebih lanjut.</p>
-                    <a class="btn btn-primary" href="/opac" role="button">OPAC</a>
+                    <a class="btn btn-primary btn-xl rounded-pill" href="/opac" role="button">Buka Katalog</a>
                 </div>
             </div>
         </div>
@@ -297,7 +297,7 @@
                 <div class="p-5">
                     <h2 class="display-4">Tentang Kami</h2>
                     <p>Klik di bawah ini untuk menuju laman Tentang Perpustakaan SD Negeri 69 Kota Bengkulu.</p>
-                    <a class="btn btn-primary" href="/about" role="button">Tentang Kami</a>
+                    <a class="btn btn-primary btn-xl rounded-pill" href="/about" role="button">Tentang Kami</a>
                 </div>
             </div>
         </div>
@@ -315,7 +315,7 @@
                 <div class="p-5">
                     <h2 class="display-4">Bantuan</h2>
                     <p>Klik di bawah ini untuk masuk ke laman bantuan.</p>
-                    <a class="btn btn-primary" href="/helper" role="button">Bantuan</a>
+                    <a class="btn btn-primary btn-xl rounded-pill" href="/helper" role="button">Buka Bantuan</a>
                 </div>
             </div>
         </div>
