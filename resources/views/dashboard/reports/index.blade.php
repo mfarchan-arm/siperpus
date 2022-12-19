@@ -29,13 +29,13 @@
                       <div class="col">
                         <p class="mb-0">Tanggal Awal</p>
                       </div>
-                      <input type="date" class="form-control" id="kembali" name="tgl_awal" value="<?php echo date('Y-m-d'); ?>" min="{{ $dateawal }}" max="{{ $dateakhir }}">
+                      <input type="date" class="form-control" id="kembali" name="tgl_awal" value="<?php echo date('Y-m-d'); ?>">
                     </div>
                     <div class="col-2">
                       <div class="col">
                         <p class="mb-0">Tanggal Akhir</p>
                       </div>
-                      <input type="date" class="form-control" id="kembali" name="tgl_akhir" value="<?php echo date('Y-m-d'); ?>" min="{{ $dateawal }}" max="{{ $dateakhir }}">
+                      <input type="date" class="form-control" id="kembali" name="tgl_akhir" value="<?php echo date('Y-m-d'); ?>" >
                     </div>
                     <div class="col-4">
                       <div class="col">

@@ -63,7 +63,7 @@ class ReportController extends Controller
         $books = Book::all();
 
         $pdf = PDF::loadView('book_pdf', ['books' => $books]);
-        return $pdf->download('laporan-buku.pdf');
+        return $pdf->download('laporan-buku-'. date('d-m-Y') .'.pdf');
     }
 
     public function users()
@@ -71,7 +71,7 @@ class ReportController extends Controller
         $users = User::all();
 
         $pdf = PDF::loadview('user_pdf', ['users' => $users]);
-        return $pdf->download('laporan-user.pdf');
+        return $pdf->download('laporan-user-'. date('d-m-Y') .'.pdf');
     }
 
     public function members()
@@ -79,7 +79,7 @@ class ReportController extends Controller
         $members = Member::all();
 
         $pdf = PDF::loadview('member_pdf', ['members' => $members]);
-        return $pdf->download('laporan-member.pdf');
+        return $pdf->download('laporan-member-'. date('d-m-Y') .'.pdf');
     }
 
     /**
@@ -92,7 +92,8 @@ class ReportController extends Controller
     {
         $transactions = Transaction::whereBetween('tgl_pinjam', [$request->tgl_awal, $request->tgl_akhir])->get();
 
-        $pdf = PDF::loadview('transactions_pdf', ['transactions' => $transactions]);
-        return $pdf->download('laporan-transactions.pdf');
+
+        $pdf = PDF::loadview('transactions_pdf', ['transactions' => $transactions])->setPaper('a4');
+        return $pdf->download('laporan-transactions-'. date('d-m-Y') .'.pdf');
     }
 }
