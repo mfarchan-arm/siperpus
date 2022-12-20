@@ -33,6 +33,34 @@
     </section>
     <div class="album py-5 bg-light">
         <div class="container">
+            <h1 class="fw-light text-center">Katalog Buku</h1>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                @foreach ($raks as $key => $rak)
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                                src="{{ asset('storage/images/' . $rak->foto) }}">
+                            <div class="card-body">
+                                <p class="card-text">{{ $rak->kategori }}</p>
+                                <div class="d-flex justify-content-between align-items-center">
+
+                                    <form action="/opac/paket" method="post" class="d-inline">
+                                        @csrf
+                                        <input type='hidden' name='kategori' value="{{ $rak->kategori }}">
+                                        <button class="btn btn-sm btn-outline-secondary" type="submit">Lihat Buku</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        {{ $raks->links() }} </div>
+                </div>
+            </div>
             <h1 class="fw-light text-center mt-5">Daftar Buku</h1>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <table class="table table-bordered border-primary">
@@ -70,34 +98,6 @@
                 <div class="col">
                     <div class="d-flex justify-content-center">
                         {{ $books->links() }} </div>
-                </div>
-            </div>
-            <h1 class="fw-light text-center">Katalog Buku</h1>
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                @foreach ($raks as $key => $rak)
-                    <div class="col">
-                        <div class="card shadow-sm">
-                            <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                src="{{ asset('storage/images/' . $rak->foto) }}">
-                            <div class="card-body">
-                                <p class="card-text">{{ $rak->kategori }}</p>
-                                <div class="d-flex justify-content-between align-items-center">
-
-                                    <form action="/opac/paket" method="post" class="d-inline">
-                                        @csrf
-                                        <input type='hidden' name='kategori' value="{{ $rak->kategori }}">
-                                        <button class="btn btn-sm btn-outline-secondary" type="submit">Lihat Buku</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-            <div class="row justify-content-center mt-4">
-                <div class="col">
-                    <div class="d-flex justify-content-center">
-                        {{ $raks->links() }} </div>
                 </div>
             </div>
         </div>
