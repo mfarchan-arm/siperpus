@@ -26,7 +26,8 @@ class LandingController extends Controller
                 ->filter(request(['search']))
                 ->paginate(7)
                 ->withQueryString(),
-            'raks' => Rak::all(),
+            'raks' => Rak::paginate(5)
+            ->withQueryString(),
         ]);
     }
 
