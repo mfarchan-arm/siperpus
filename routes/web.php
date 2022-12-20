@@ -66,3 +66,7 @@ Route::post('/dashboard/books/print', [PrintController::class, 'print_book'])->m
 
 //Import Excel Books
 Route::post('/dashboard/books/import', [BookController::class, 'import'])->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

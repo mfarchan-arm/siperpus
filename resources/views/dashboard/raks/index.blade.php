@@ -18,7 +18,7 @@
         {{ session('failed') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-    @endif
+    @endif 
     <div class="card mb-3">
         <div class=" card-header">Data Kategori Rak</div>
         <div class="card-body">
@@ -35,6 +35,7 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Nama Kategori</th>
+                                <th scope="col">Gambar</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -43,6 +44,9 @@
                                 @foreach ($raks as $key => $rak)
                                 <td class="align-middle text-center">{{ $raks->firstItem() + $key }}</td>
                                 <td>{{ $rak->kategori }}</td>
+                                <td><img  width="100px"
+                                    src="{{ asset('storage/images/' . $rak->foto) }}">
+                            </td>  
                                 <td>
                                     <a href="/dashboard/raks/{{ $rak->id }}/edit"
                                         class="badge bg-warning border-0">Edit</a>

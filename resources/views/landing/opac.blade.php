@@ -32,115 +32,6 @@
 </section>
 <div class="album py-5 bg-light">
     <div class="container">
-        <h1 class="fw-light text-center">Buku Paket Kelas 1, 2, 3, 4, 5, dan 6</h1>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        src="{{ asset('storage/images/kelas1.jpg') }}">
-                    <div class="card-body">
-                        <p class="card-text">Buku Paket Kelas 1</p>
-                        <div class="d-flex justify-content-between align-items-center">
-
-                            <form action="/opac/paket" method="post" class="d-inline">
-                                @csrf
-                                <input type='hidden' name='kategori' value="Kelas 1">
-                                <button class="btn btn-sm btn-outline-secondary" type="submit">Lihat Buku</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        src="{{ asset('storage/images/kelas2.jpg') }}">
-                    <div class="card-body">
-                        <p class="card-text">Buku Paket Kelas 2</p>
-                        <div class="d-flex justify-content-between align-items-center">
-
-                            <form action="/opac/paket" method="post" class="d-inline">
-                                @csrf
-                                <input type='hidden' name='kategori' value="Kelas 2">
-                                <button class="btn btn-sm btn-outline-secondary">Lihat Buku</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        src="{{ asset('storage/images/kelas3.jpg') }}">
-
-                    <div class="card-body">
-                        <p class="card-text">Buku Paket Kelas 3</p>
-                        <div class="d-flex justify-content-between align-items-center">
-
-                            <form action="/opac/paket" method="post" class="d-inline">
-                                @csrf
-                                <input type='hidden' name='kategori' value="Kelas 3">
-                                <button class="btn btn-sm btn-outline-secondary">Lihat Buku</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        src="{{ asset('storage/images/kelas4.jpg') }}">
-                    <div class="card-body">
-                        <p class="card-text">Buku Paket Kelas 4</p>
-                        <div class="d-flex justify-content-between align-items-center">
-
-                            <form action="/opac/paket" method="post" class="d-inline">
-                                @csrf
-                                <input type='hidden' name='kategori' value="Kelas 4">
-                                <button class="btn btn-sm btn-outline-secondary" type="submit">Lihat Buku</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        src="{{ asset('storage/images/kelas5.jpg') }}">
-                    <div class="card-body">
-                        <p class="card-text">Buku Paket Kelas 5</p>
-                        <div class="d-flex justify-content-between align-items-center">
-
-                            <form action="/opac/paket" method="post" class="d-inline">
-                                @csrf
-                                <input type='hidden' name='kategori' value="Kelas 5">
-                                <button class="btn btn-sm btn-outline-secondary">Lihat Buku</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                        src="{{ asset('storage/images/kelas6.jpg') }}">
-
-                    <div class="card-body">
-                        <p class="card-text">Buku Paket Kelas 6</p>
-                        <div class="d-flex justify-content-between align-items-center">
-
-                            <form action="/opac/paket" method="post" class="d-inline">
-                                @csrf
-                                <input type='hidden' name='kategori' value="Kelas 6">
-                                <button class="btn btn-sm btn-outline-secondary">Lihat Buku</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
         <h1 class="fw-light text-center mt-5">Daftar Buku</h1>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <table class="table table-bordered border-primary">
@@ -174,6 +65,28 @@
             </table>
             <div class="d-flex justify-content-center">
                 {{ $books->links() }} </div>
+        </div>
+        <h1 class="fw-light text-center">Katalog Buku</h1>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach ($raks as $key => $rak)
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+                        src="{{ asset('storage/images/'. $rak->foto) }}">
+                    <div class="card-body">
+                        <p class="card-text">{{ $rak->kategori }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <form action="/opac/paket" method="post" class="d-inline">
+                                @csrf
+                                <input type='hidden' name='kategori' value="{{ $rak->kategori }}">
+                                <button class="btn btn-sm btn-outline-secondary" type="submit">Lihat Buku</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 </div>

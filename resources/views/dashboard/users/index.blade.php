@@ -68,7 +68,7 @@
                                 <td>{{ $user->email }}</td>
                                 <td><img class="rounded-circle" width="100px"
                                         src="{{ asset('storage/images/' . $user->nama_gambar) }}">
-                                </td>
+                                </td>  
                                 <td>
                                     <a href="/dashboard/users/{{ $user->id }}/edit"
                                         class="badge bg-warning border-0">Edit</a>
