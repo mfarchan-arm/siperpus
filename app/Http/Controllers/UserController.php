@@ -20,7 +20,7 @@ class UserController extends Controller
     public function index()
     {
         return view('dashboard.users.index', [
-            'users' => User::first()
+            'users' => User::first() 
                 ->orderBy('nama')
                 ->filter(request(['search']))
                 ->paginate(10)

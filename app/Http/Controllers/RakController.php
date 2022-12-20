@@ -6,6 +6,7 @@ use App\Models\Rak;
 use App\Models\Book;
 use App\Http\Requests\StoreRakRequest;
 use App\Http\Requests\UpdateRakRequest;
+use Illuminate\Support\Facades\Storage;
 
 class RakController extends Controller
 {
@@ -43,9 +44,15 @@ class RakController extends Controller
      */
     public function store(StoreRakRequest $request)
     {
-        $validatedData = $request->validate([
+        $validatedData = $request->validate([ 
             'kategori' => 'required|unique:raks',
+            'foto' => 'image|file|max:50000',
         ]);
+        if ($request->file('foto')) {
+            $imageName = time() . '.' . $request->file('foto')->getClientOriginalExtension();
+            $request->file('foto')->move(public_path('storage/images'), $imageName);
+            $validatedData['foto'] = $imageName;
+        }
         Rak::create($validatedData);
 
         return redirect('/dashboard/raks')->with('success', 'Kategori baru telah ditambahkan.');
@@ -87,6 +94,7 @@ class RakController extends Controller
     {
         $rules = [
             'id' => 'required',
+            'foto' => 'image|file|max:50000',
         ];
 
         if ($request->kategori != $rak->kategori) {
@@ -94,6 +102,15 @@ class RakController extends Controller
         }
 
         $validatedData = $request->validate($rules);
+        if ($request->file('foto')) {
+            if ($rak->foto) {
+                Storage::delete($rak['foto']);
+            }
+
+            $imageName = time() . '.' . $request->file('foto')->getClientOriginalExtension();
+            $request->file('foto')->move(public_path('storage/images'), $imageName);
+            $validatedData['foto'] = $imageName;
+        }
         Rak::where('id', $validatedData['id'])->update($validatedData);
 
         return redirect('/dashboard/raks')->with('success', 'Kategori telah diubah!.');
@@ -109,6 +126,9 @@ class RakController extends Controller
     {
         if(Book::where('rak_id',$rak->id)->count() != 0){
             return redirect('/dashboard/raks')->with('failed', 'Gagal hapus kategori karena data masih digunakan!');
+        }
+        if ($rak->foto) {
+            Storage::delete($rak['foto']);
         }
         Rak::destroy($rak->id);
         Book::where('rak_id', $rak->id)->delete();

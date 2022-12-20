@@ -26,6 +26,7 @@ class LandingController extends Controller
                 ->filter(request(['search']))
                 ->paginate(7)
                 ->withQueryString(),
+            'raks' => Rak::all(),
         ]);
     }
 
@@ -41,7 +42,6 @@ class LandingController extends Controller
         ]);
     }
 
-    
     /**
      * Update the specified resource in storage.
      *
@@ -53,8 +53,8 @@ class LandingController extends Controller
         $id = Rak::where('kategori', $request['kategori'])->value('id');
         return view('landing.paket.index', [
             'active' => 'opac',
-            'books' => Book::where('rak_id', $id)
-                ->paginate(10),
+            'books' => Book::where('rak_id', $id)->paginate(10),
+            'raks' => Rak::all(),
         ]);
     }
 
