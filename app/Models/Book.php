@@ -16,7 +16,11 @@ class Book extends Model
     public function scopeFilter($query, array $filters)
     {
         $query->when($filters['search'] ?? false, function ($query, $search) {
-            return $query->where('judul', 'like', '%' . $search . '%');
+            return $query->where('judul', 'like', '%' . $search . '%')
+            ->orWhere('pengarang', 'like', '%' . $search . '%')
+            ->orWhere('thn_terbit', 'like', '%' . $search . '%')
+            ->orWhere('eksemplar', 'like', '%' . $search . '%')
+            ->orWhere('penerbit', 'like', '%' . $search . '%');
         });
 
         $query->when($filters['barcode'] ?? false, function ($query, $barcode) {
