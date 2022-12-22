@@ -17,7 +17,7 @@ class Book extends Model
     {
         $query->when($filters['search'] ?? false, function ($query, $search) {
             return $query->where('judul', 'like', '%' . $search . '%')
-            ->orWhere('barcode', 'like', '%' . $search . '%')
+            ->orWhere('no_barcode', 'like', '%' . $search . '%')
             ->orWhere('pengarang', 'like', '%' . $search . '%')
             ->orWhere('thn_terbit', 'like', '%' . $search . '%')
             ->orWhere('eksemplar', 'like', '%' . $search . '%')
@@ -25,7 +25,12 @@ class Book extends Model
         });
 
         $query->when($filters['barcode'] ?? false, function ($query, $barcode) {
-            return $query->where('no_barcode', 'like', '%' . $barcode . '%');
+            return $query->where('no_barcode', 'like', '%' . $barcode . '%')
+            ->orWhere('judul', 'like', '%' . $barcode . '%')
+            ->orWhere('pengarang', 'like', '%' . $barcode . '%')
+            ->orWhere('thn_terbit', 'like', '%' . $barcode . '%')
+            ->orWhere('eksemplar', 'like', '%' . $barcode . '%')
+            ->orWhere('penerbit', 'like', '%' . $barcode . '%');
         });
     }
 
