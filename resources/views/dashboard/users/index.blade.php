@@ -45,7 +45,7 @@
                     <table class="table table-bordered align-items-center mb-0">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
+                                <th scope="col">No.</th>
                                 <th scope="col">Nama Lengkap</th>
                                 <th scope="col">NIP</th>
                                 <th scope="col">Jabatan</th>
@@ -66,7 +66,7 @@
                                 <td>{{ $user->alamat }}</td>
                                 <td>{{ $user->no_tlp }}</td>
                                 <td>{{ $user->email }}</td>
-                                <td><img class="rounded-circle" width="100px"
+                                <td><img width="100px"
                                         src="{{ asset('storage/images/' . $user->nama_gambar) }}">
                                 </td>  
                                 <td>

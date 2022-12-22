@@ -74,9 +74,6 @@
                                         <button class="badge bg-danger border-0">Hapus</button>
                                     </form>
                                     @else
-                                    <a href="/dashboard/transactions/{{ $transaction->id }}/edit"
-                                        class="badge bg-warning border-0">Edit</a>
-
                                     <form action="/dashboard/transactions/{{ $transaction->id }}" method="post"
                                         class="d-inline">
                                         @method('delete')

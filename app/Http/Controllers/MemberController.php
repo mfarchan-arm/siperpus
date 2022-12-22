@@ -105,7 +105,6 @@ class MemberController extends Controller
     public function update(UpdateMemberRequest $request, Member $member)
     {
         $rules = [
-            'id' => 'required',
             'nama' => 'required',
             'tmpt_lahir' => 'required',
             'tgl_lahir' => 'required',
@@ -139,7 +138,7 @@ class MemberController extends Controller
         }
         // dd($validatedData);
 
-        Member::where('id', $validatedData['id'])->update($validatedData);
+        Member::where('nisn', $member->nisn)->update($validatedData);
 
         return redirect('/dashboard/members')->with('success', 'Anggota telah diubah!.');
     }
@@ -152,13 +151,13 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        if (Transaction::where('member_id', $member->id)->count() != 0) {
+        if (Transaction::where('member_nisn', $member->nisn)->count() != 0) {
             return redirect('/dashboard/members')->with('failed', 'Gagal hapus anggota karena terdapat transaksi !');
         }
         if ($member->nama_gambar) {
             Storage::delete($member['nama_gambar']);
         }
-        Member::destroy($member->id);
+        Member::destroy($member->nisn);
 
         return redirect('/dashboard/members')->with('success', 'Anggota telah dihapus.');
     }

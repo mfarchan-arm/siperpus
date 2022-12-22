@@ -46,7 +46,7 @@
             @endforeach
         </tbody>
     </table>
-
+    <p><br><br><br><br>Kepala Perpustakaan <br><br><br><br><br>NIP.</p>
 </body>
 
 </html>

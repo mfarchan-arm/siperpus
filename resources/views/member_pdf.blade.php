@@ -25,8 +25,8 @@
         <thead>
             <tr>
                 <th scope="col">Nama Lengkap</th>
-                <th scope="col">Tempat Lahir</th>
-                <th scope="col">Tanggal Lahir</th>
+                <th scope="col">NISN</th>
+                <th scope="col">Tempat, Tanggal Lahir</th>
                 <th scope="col">Jenis Kelamin</th>
                 <th scope="col">Alamat</th>
                 <th scope="col">Nomor Telepon</th>
@@ -37,8 +37,8 @@
             @foreach ($members as $member)
             <tr>
                 <td>{{ $member->nama }}</td>
-                <td>{{ $member->tmpt_lahir }}</td>
-                <td>{{ $member->tgl_lahir }}</td>
+                <td>{{ $member->nisn }}</td>
+                <td>{{ $member->tmpt_lahir }}, {{ $member->tgl_lahir }}</td>
                 <td>{{ $member->jns_kelamin }}</td>
                 <td>{{ $member->alamat }}</td>
                 <td>{{ $member->no_hp }}</td>
@@ -47,6 +47,7 @@
             @endforeach
         </tbody>
     </table>
+    <p><br><br><br><br>Kepala Perpustakaan <br><br><br><br><br>NIP.</p>
 </body>
 
 </html>

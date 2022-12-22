@@ -111,14 +111,14 @@
                 <div editable="rich">
                     <h4 class="title">Kepala Sekolah</h4>
                     <p class="lead">Susilowati, S.Pd</p>
-                    <h4 class="title">Waka Kesiswaan</h4>
-                    <p class="lead">Juhariah, S.Pd</p>
+                    <h4 class="title">Komite</h4>
+                    <p class="lead">Sulianto, M.Pd</p>
                     <h4 class="title">Waka Bid. Kurikulum</h4>
-                    <p class="lead">Asrul Usadi, S.Pd</p>
-                    <h4 class="title">Waka ORTALA</h4>
-                    <p class="lead">Dulhanan, S.Pd</p>
-                    <h4 class="title">Waka BID. SAPRASHUMAS</h4>
-                    <p class="lead">Drs. Suherman</p>
+                    <p class="lead">Fitri Ekawati, M.Pd</p>
+                    <h4 class="title">Kapala Perpustakaan</h4>
+                    <p class="lead">Yurni Sulaya, S.Pd</p>
+                    <h4 class="title">Staff Perpustakaan</h4>
+                    <p class="lead">Fatimawati S,Pd.</p>
                 </div>
             </div>
         </div>

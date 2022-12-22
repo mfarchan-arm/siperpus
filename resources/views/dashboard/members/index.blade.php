@@ -79,18 +79,18 @@
                                         src="{{ asset('storage/images/' . $member->nama_gambar) }}">
                                 </td>
                                 <td>
-                                    <a href="/dashboard/members/{{ $member->id }}/edit"
+                                    <a href="/dashboard/members/{{ $member->nisn }}/edit"
                                         class="badge bg-warning border-0">Edit</a>
 
                                     <form action="/dashboard/members/print" method="post" class="d-inline" target="_blank">
                                         @csrf
-                                        <input type='hidden' name='id' value='{{ $member->id }}'>
+                                        <input type='hidden' name='id' value='{{ $member->nisn }}'>
                                         <button class="badge bg-primary border-0"
                                             onclick="return confirm('Cetak Kartu?')">Cetak
                                             Kartu</button>
                                     </form>
 
-                                    <form action="/dashboard/members/{{ $member->id }}" method="post" class="d-inline">
+                                    <form action="/dashboard/members/{{ $member->nisn }}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="badge bg-danger border-0"

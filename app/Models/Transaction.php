@@ -19,7 +19,7 @@ class Transaction extends Model
 
     public function member()
     {
-        return $this->belongsTo(Member::class);
+        return $this->belongsTo(Member::class,'member_nisn','nisn');
     }
     
     public function user()

@@ -50,11 +50,11 @@
                         <div class="col-sm-9">
                             <select class="form-select" id="peminjam" name="member_id">
                                 @foreach ($members as $member)
-                                @if ($transaction->member_id == $member->id)
-                                <option value="{{ $member->id }}" selected>{{ $member->nama }}
+                                @if ($transaction->member_id == $member->nisn)
+                                <option value="{{ $member->nisn }}" selected>{{ $member->nama }}
                                 </option>
                                 @else
-                                <option value="{{ $member->id }}">{{ $member->nama }}</option>
+                                <option value="{{ $member->nisn }}">{{ $member->nama }}</option>
                                 @endif
                                 @endforeach
                             </select>

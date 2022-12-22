@@ -21,7 +21,7 @@
             <table class="table table-bordered border-primary">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">No.</th>
                         <th scope="col">Judul Buku</th>
                         <th scope="col">Barcode</th>
                         <th scope="col">Pengarang</th>

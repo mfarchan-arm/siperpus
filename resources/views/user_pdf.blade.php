@@ -24,7 +24,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">No.</th>
                 <th scope="col">Nama Lengkap</th>
                 <th scope="col">Jabatan</th>
                 <th scope="col">Alamat</th>
@@ -49,6 +49,7 @@
             @endforeach
         </tbody>
     </table>
+    <p><br><br><br><br>Kepala Perpustakaan <br><br><br><br><br>NIP.</p>
 </body>
 
 </html>

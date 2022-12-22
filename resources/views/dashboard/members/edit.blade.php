@@ -18,19 +18,9 @@
     <div class="col-lg-8">
         <div class="card mb-4">
             <div class="card-body">
-                <form method="post" action="/dashboard/members/{{ $member->id }}" enctype="multipart/form-data">
+                <form method="post" action="/dashboard/members/{{ $member->nisn }}" enctype="multipart/form-data">
                     @csrf
                     @method('put')
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <p class="mb-0">ID.</p>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="id" required autofocus
-                                value="{{ old('id', $member->id) }}" readonly>
-                        </div>
-                    </div>
-                    <hr>
                     <div class="row">
                         <div class="col-sm-3">
                             <p class="mb-0">Nama Lengkap</p>
@@ -81,14 +71,19 @@
                             <p class="mb-0">Jenis Kelamin</p>
                         </div>
                         <div class="col-sm-9">
-                            <input class="form-check-input" type="radio" name="jns_kelamin" value="Laki-Laki" checked>
-                            <label class="form-check-label">
-                                Laki-Laki
-                            </label>
-                            <input class="form-check-input" type="radio" value="Perempuan" name="jns_kelamin">
-                            <label class="form-check-label">
-                                Perempuan
-                            </label>
+                            <div class="form-check">
+                                <input class="form-check-input " type="radio" name="jns_kelamin" value="Laki-Laki"
+                                    checked>
+                                <label class="form-check-label">
+                                    Laki-Laki
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="Perempuan" name="jns_kelamin">
+                                <label class="form-check-label">
+                                    Perempuan
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <hr>
@@ -122,14 +117,19 @@
                             <p class="mb-0">Jenis Keanggotaan</p>
                         </div>
                         <div class="col-sm-9">
-                            <input class="form-check-input" type="radio" name="jns_anggota" value="Guru" checked>
-                            <label class="form-check-label">
-                                Guru
-                            </label>
-                            <input class="form-check-input" type="radio" value="Siswa" name="jns_anggota">
-                            <label class="form-check-label">
-                                Siswa
-                            </label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="jns_anggota" value="Guru"
+                                    checked>
+                                <label class="form-check-label">
+                                    Guru
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="Siswa" name="jns_anggota">
+                                <label class="form-check-label">
+                                    Siswa
+                                </label>
+                            </div>
                         </div>
                     </div>
                     <hr>

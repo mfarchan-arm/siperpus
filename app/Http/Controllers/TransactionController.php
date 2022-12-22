@@ -19,6 +19,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
+        // dd( Transaction::first());
         return view('dashboard.transactions.index', [
             'active' => 'transactions',
             'transactions' => Transaction::latest()->paginate(7),
@@ -51,7 +52,7 @@ class TransactionController extends Controller
         Transaction::create([
             'book_id' => $request->book_id,
             'user_id' => $request->user_id,
-            'member_id' => $request->member_id,
+            'member_nisn' => $request->member_id,
             'tgl_pinjam' => $request->tgl_pinjam,
             'tgl_kembali' => $request->tgl_kembali,
             'jml_pinjam' => $request->jml_pinjam,
@@ -158,7 +159,7 @@ class TransactionController extends Controller
             Transaction::where('id', $request['id'])->update([
                 'book_id' => $request->book_id,
                 'user_id' => $request->user_id,
-                'member_id' => $request->member_id,
+                'member_nisn' => $request->member_id,
                 'tgl_pinjam' => $request->tgl_pinjam,
                 'tgl_kembali' => $request->tgl_kembali,
                 'jml_pinjam' => $request->jml_pinjam,
@@ -171,7 +172,7 @@ class TransactionController extends Controller
             Transaction::where('id', $request['id'])->update([
                 'book_id' => $request->book_id,
                 'user_id' => $request->user_id,
-                'member_id' => $request->member_id,
+                'member_nisn' => $request->member_id,
                 'tgl_pinjam' => $request->tgl_pinjam,
                 'tgl_kembali' => $request->tgl_kembali,
                 'jml_pinjam' => $request->jml_pinjam,

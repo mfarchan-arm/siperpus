@@ -9,7 +9,9 @@ use Illuminate\Support\Arr;
 class Member extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $guarded = Null;
+    protected $primaryKey = 'nisn';
+    protected $keyType = 'string';
 
     public function scopeFilter($query, array $filters)
     {
@@ -21,6 +23,6 @@ class Member extends Model
     
     public function members()
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasMany(Transaction::class,'member_nisn','nisn');
     }
 }

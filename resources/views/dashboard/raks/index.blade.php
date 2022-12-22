@@ -21,8 +21,7 @@
     @endif 
     <div class="card mb-3">
         <div class=" card-header">Data Kategori Rak</div>
-        <div class="card-body">
-    </div>
+        <div class="card-body"></div>
         <a href="/dashboard/raks/create" class="btn btn-lg btn-primary mx-4">Tambah Kategori Rak</a>
     </div>
 
@@ -31,9 +30,9 @@
             <div class="card">
                 <div class="table-responsive">
                     <table class="table table-bordered align-items-center mb-0">
-                        <thead>
+                        <thead class="align-items-center">
                             <tr>
-                                <th scope="col">#</th>
+                                <th class="col-1">No.</th>
                                 <th scope="col">Nama Kategori</th>
                                 <th scope="col">Gambar</th>
                                 <th scope="col">Action</th>

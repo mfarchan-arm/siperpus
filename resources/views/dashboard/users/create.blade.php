@@ -6,7 +6,7 @@
     <div class="col">
         <div class="card mb-4">
             <div class="card-body">
-                <img class="img-preview rounded-circle img-fluid" style="width: 150px;">
+                <img class="img-preview img-fluid" style="width: 150px;">
                 <p class="text-muted mb-1">Preview Profile</p>
             </div>
         </div>
