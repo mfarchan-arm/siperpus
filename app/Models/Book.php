@@ -17,6 +17,7 @@ class Book extends Model
     {
         $query->when($filters['search'] ?? false, function ($query, $search) {
             return $query->where('judul', 'like', '%' . $search . '%')
+            ->orWhere('barcode', 'like', '%' . $search . '%')
             ->orWhere('pengarang', 'like', '%' . $search . '%')
             ->orWhere('thn_terbit', 'like', '%' . $search . '%')
             ->orWhere('eksemplar', 'like', '%' . $search . '%')
