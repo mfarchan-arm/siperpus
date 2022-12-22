@@ -60,8 +60,12 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class="d-flex justify-content-center">
-                    {{ $books->links() }} </div>
+            </div>
+            <div class="row justify-content-center mt-4">
+                <div class="col">
+                    <div class="d-flex justify-content-center">
+                        {{ $books->links() }} </div>
+                </div>
             </div>
         </div>
     </div>
