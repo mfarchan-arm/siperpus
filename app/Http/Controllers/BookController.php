@@ -105,15 +105,13 @@ class BookController extends Controller
     {
         $rules = [
             'id' => 'required',
+            'judul' => 'required',
             'rak_id' => 'required',
             'pengarang' => 'required',
             'penerbit' => 'required',
             'thn_terbit' => 'required',
             'eksemplar' => 'required',
         ];
-        if ($request->judul != $book->judul) {
-            $rules['judul'] = 'required|unique:books';
-        }
         if ($request->no_barcode != $book->no_barcode) {
             $rules['no_barcode'] = 'required|unique:books';
         }
