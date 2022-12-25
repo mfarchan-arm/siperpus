@@ -33,7 +33,7 @@ class RakController extends Controller
     {
         return view('dashboard.raks.create', [
             'active' => 'raks',
-        ]);
+        ]); 
     }
 
     /**
@@ -46,12 +46,12 @@ class RakController extends Controller
     {
         $validatedData = $request->validate([ 
             'kategori' => 'required|unique:raks',
-            'foto' => 'image|file|max:50000',
+            'nama_gambar' => 'image|file|max:50000',
         ]);
-        if ($request->file('foto')) {
-            $imageName = time() . '.' . $request->file('foto')->getClientOriginalExtension();
-            $request->file('foto')->move(public_path('storage/images'), $imageName);
-            $validatedData['foto'] = $imageName;
+        if ($request->file('nama_gambar')) {
+            $imageName = time() . '.' . $request->file('nama_gambar')->getClientOriginalExtension();
+            $request->file('nama_gambar')->move(public_path('storage/images'), $imageName);
+            $validatedData['nama_gambar'] = $imageName;
         }
         Rak::create($validatedData);
 
@@ -94,7 +94,7 @@ class RakController extends Controller
     {
         $rules = [
             'id' => 'required',
-            'foto' => 'image|file|max:50000',
+            'nama_gambar' => 'image|file|max:50000',
         ];
 
         if ($request->kategori != $rak->kategori) {
@@ -102,14 +102,14 @@ class RakController extends Controller
         }
 
         $validatedData = $request->validate($rules);
-        if ($request->file('foto')) {
-            if ($rak->foto) {
-                Storage::delete($rak['foto']);
+        if ($request->file('nama_gambar')) {
+            if ($rak->nama_gambar) {
+                Storage::delete($rak['nama_gambar']);
             }
 
-            $imageName = time() . '.' . $request->file('foto')->getClientOriginalExtension();
-            $request->file('foto')->move(public_path('storage/images'), $imageName);
-            $validatedData['foto'] = $imageName;
+            $imageName = time() . '.' . $request->file('nama_gambar')->getClientOriginalExtension();
+            $request->file('nama_gambar')->move(public_path('storage/images'), $imageName);
+            $validatedData['nama_gambar'] = $imageName;
         }
         Rak::where('id', $validatedData['id'])->update($validatedData);
 
@@ -127,8 +127,8 @@ class RakController extends Controller
         if(Book::where('rak_id',$rak->id)->count() != 0){
             return redirect('/dashboard/raks')->with('failed', 'Gagal hapus kategori karena data masih digunakan!');
         }
-        if ($rak->foto) {
-            Storage::delete($rak['foto']);
+        if ($rak->nama_gambar) {
+            Storage::delete($rak['nama_gambar']);
         }
         Rak::destroy($rak->id);
         Book::where('rak_id', $rak->id)->delete();
