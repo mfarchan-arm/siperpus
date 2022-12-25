@@ -3,6 +3,7 @@
 namespace App\Imports;
 
 use App\Models\Book;
+use App\Models\Rak;
 use Maatwebsite\Excel\Concerns\ToModel;
 
 class BookImport implements ToModel
@@ -14,13 +15,15 @@ class BookImport implements ToModel
      */
     public function model(array $row)
     {
+        $kategori = Rak::where('kategori', $row[0])->first();
         return new Book([
-            'judul' => $row[0],
-            'no_barcode' => $row[1],
-            'pengarang' => $row[2],
-            'penerbit' => $row[3],
-            'thn_terbit' => $row[4],
-            'eksemplar' => $row[5],
+            'rak_id' => $kategori->id,
+            'judul' => $row[1],
+            'no_barcode' => $row[2],
+            'pengarang' => $row[3],
+            'penerbit' => $row[4],
+            'thn_terbit' => $row[5],
+            'eksemplar' => $row[6],
         ]);
     }
 }
