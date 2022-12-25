@@ -19,7 +19,7 @@
                         </div>
 
                         <div class="col-sm-9">
-                            <select class="form-select" id="buku" name="book_id">
+                            <select class="form-select" id="buku" name="book_id" >
                                 @foreach ($books as $book)
                                 @if ($transaction->book_id == $book->id)
                                 <option value="{{ $book->id }}" selected>{{ $book->judul }} |

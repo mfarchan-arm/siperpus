@@ -144,7 +144,7 @@
                         </div>
                     </div>
                     <hr>
-                    <button class="btn btn-primary" type="submit">Tambahkan Anggota</button>
+                    <button class="btn btn-primary" type="submit">Ubah</button>
                 </form>
             </div>
         </div>

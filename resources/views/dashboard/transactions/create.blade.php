@@ -76,7 +76,7 @@
                                 tersedia)</p>
                         </div>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="jml_pinjam" required id="eksemplarubah">
+                            <input type="text" class="form-control" name="jml_pinjam" required id="eksemplarubah" min="1">
                         </div>
                     </div>
                     <hr>

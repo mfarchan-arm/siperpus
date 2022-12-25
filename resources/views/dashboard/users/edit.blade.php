@@ -100,7 +100,7 @@
                             <p class="mb-0">Password yang Baru</p>
                         </div>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="password" required>
+                            <input type="password" class="form-control" name="password" autocomplete="off" required>
                         </div>
                     </div>
                     <hr>

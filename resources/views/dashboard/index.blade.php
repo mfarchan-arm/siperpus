@@ -183,7 +183,6 @@
 <script src="{{ asset('argon/js/plugins/chartjs.min.js')}}"></script>
 <script>
     var ctx1 = document.getElementById("chart-line").getContext("2d");
-    console.log("Hello world!");
 // var datalabel =  {{json_encode($label)}};
 // var datalabel = JSON.parse(datalabel.replace(/&quot;/g,'"'));
     var gradientStroke1 = ctx1.createLinearGradient(0, 230, 0, 50);

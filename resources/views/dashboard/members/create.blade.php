@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control @error('nisn') is-invalid @enderror"
-                                    name="nisn" required placeholder="Masukkan NISN..." maxlength="10" id="intTextBox2">
+                                    name="nisn" required placeholder="Masukkan NISN..." maxlength="10" id="intTextBox2" autocomplete="off">
                                 @error('nisn')
                                     <div class="invalid-feedback">
                                         {{ $message }}

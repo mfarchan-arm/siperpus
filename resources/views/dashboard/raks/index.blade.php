@@ -44,7 +44,7 @@
                                 <td class="align-middle text-center">{{ $raks->firstItem() + $key }}</td>
                                 <td>{{ $rak->kategori }}</td>
                                 <td><img  width="100px"
-                                    src="{{ asset('storage/images/' . $rak->foto) }}">
+                                    src="{{ asset('storage/images/' . $rak->nama_gambar) }}">
                             </td>  
                                 <td>
                                     <a href="/dashboard/raks/{{ $rak->id }}/edit"
