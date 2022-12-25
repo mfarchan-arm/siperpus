@@ -46,7 +46,6 @@
                         <input type="file" class="form-control" name="file" required>
                         <button type="submit " class="btn btn-primary">Import</button>
                     </div>
-
                 </form>
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     Lihat Contoh Format Excel
@@ -70,6 +69,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="/export" class="btn btn-primary">Export</a>
             </div>
         </div>
         <a href="/dashboard/books/create" class="btn btn-lg btn-primary mx-4">Tambah Buku</a>
