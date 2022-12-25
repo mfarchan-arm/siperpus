@@ -11,6 +11,8 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\RakController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\ReportController;
+use App\Http\Controllers\BookExportController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +66,8 @@ Route::post('/dashboard/users/print', [PrintController::class, 'print_user'])->m
 Route::post('/dashboard/members/print', [PrintController::class, 'print_member'])->middleware('auth');
 Route::post('/dashboard/books/print', [PrintController::class, 'print_book'])->middleware('auth');
 
+
+Route::get('/export', [BookExportController::class, 'exportBooks'])->middleware('auth');
 //Import Excel Books
 Route::post('/dashboard/books/import', [BookController::class, 'import'])->middleware('auth');
 
