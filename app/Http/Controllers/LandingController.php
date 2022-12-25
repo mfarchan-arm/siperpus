@@ -26,7 +26,7 @@ class LandingController extends Controller
                 ->filter(request(['search']))
                 ->paginate(7)
                 ->withQueryString(),
-            'raks' => Rak::paginate(3)
+            'raks' => Rak::paginate(6)
             ->withQueryString(),
         ]);
     }
@@ -84,7 +84,7 @@ class LandingController extends Controller
         }
     }
 
-    /**
+    /** 
      * Handle an authentication attempt.
      *
      * @param  \Illuminate\Http\Request  $request
