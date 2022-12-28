@@ -79,7 +79,7 @@
                     <div class="col">
                         <div class="card shadow-sm">
                             <img class="bd-placeholder-img card-img-top" width="100%" height="225"
-                                src="{{ asset('storage/images/' . $rak->foto) }}">
+                                src="{{ asset('storage/images/' . $rak->nama_gambar) }}">
                             <div class="card-body">
                                 <p class="card-text">{{ $rak->kategori }}</p>
                                 <div class="d-flex justify-content-between align-items-center">

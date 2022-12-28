@@ -5,8 +5,7 @@
     <div class="row py-lg-5">
         <div class="col-lg-6 py-5 col-md-8 mx-auto">
             <h1 class="font-weight-normal">OPAC</h1>
-            <p class=" text-muted">Jelajahi fitur OPAC dengan menggunakan fitur cari nama buku, fitur informasi buku
-                paket Kelas 1, 2, 3, 4, 5, dan 6</p>
+            <p class=" text-muted">Jelajahi fitur OPAC dengan menggunakan fitur cari buku dan fitur kategori buku</p>
             <p>
 
             </p>
