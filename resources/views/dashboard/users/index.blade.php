@@ -70,18 +70,18 @@
                                         src="{{ asset('storage/images/' . $user->nama_gambar) }}">
                                 </td>  
                                 <td>
-                                    <a href="/dashboard/users/{{ $user->id }}/edit"
+                                    <a href="/dashboard/users/{{ $user->nip }}/edit"
                                         class="badge bg-warning border-0">Edit</a>
 
                                     <form action="/dashboard/users/print" method="post" class="d-inline" target="_blank">
                                         @csrf
-                                        <input type='hidden' name='id' value='{{ $user->id }}'>
+                                        <input type='hidden' name='id' value='{{ $user->nip }}'>
                                         <button class="badge bg-primary border-0"
                                             onclick="return confirm('Cetak Kartu?')">Cetak
                                             Kartu</button>
                                     </form>
 
-                                    <form action="/dashboard/users/{{ $user->id }}" method="post" class="d-inline">
+                                    <form action="/dashboard/users/{{ $user->nip }}" method="post" class="d-inline">
                                         @method('delete')
                                         @csrf
                                         <button class="badge bg-danger border-0"

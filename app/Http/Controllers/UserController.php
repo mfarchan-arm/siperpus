@@ -108,7 +108,6 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $rules = [
-            'id' => 'required',
             'nama' => 'required',
             'nip' => 'required',
             'email' => 'required',
@@ -130,7 +129,7 @@ class UserController extends Controller
             $validatedData['nama_gambar'] = $imageName;
         }
         $validatedData['password'] = Hash::make($validatedData['password']);
-        User::where('id', $validatedData['id'])->update($validatedData);
+        User::where('nip', $validatedData['nip'])->update($validatedData);
 
         return redirect('/dashboard/users')->with('success', 'Profil telah diubah!.');
     }
@@ -147,7 +146,7 @@ class UserController extends Controller
         if ($user->nama_gambar) {
             Storage::delete($user['nama_gambar']);
         }
-        User::destroy($user->id);
+        User::destroy($user->nip);
 
         return redirect('/dashboard/users')->with('success', 'Petugas telah dihapus.');
     }

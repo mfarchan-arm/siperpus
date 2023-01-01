@@ -25,11 +25,11 @@
         <thead>
             <tr>
                 <th scope="col">No.</th>
+                <th scope="col">NIP</th>
                 <th scope="col">Nama Lengkap</th>
                 <th scope="col">Jabatan</th>
                 <th scope="col">Alamat</th>
                 <th scope="col">Nomor Telepon</th>
-                <th scope="col">E-mail</th>
 
 
             </tr>
@@ -37,15 +37,15 @@
         <tbody>
             @php $i=1 @endphp
             @foreach ($users as $user)
-            <tr>
-                <td>{{ $i++ }}</td>
-                <td>{{ $user->nama }}</td>
-                <td>{{ $user->jabatan }}</td>
-                <td>{{ $user->alamat }}</td>
-                <td>{{ $user->no_tlp }}</td>
-                <td>{{ $user->email }}</td>
+                <tr>
+                    <td>{{ $i++ }}</td>
+                    <td>{{ $user->nip }}</td>
+                    <td>{{ $user->nama }}</td>
+                    <td>{{ $user->jabatan }}</td>
+                    <td>{{ $user->alamat }}</td>
+                    <td>{{ $user->no_tlp }}</td>
 
-            </tr>
+                </tr>
             @endforeach
         </tbody>
     </table>

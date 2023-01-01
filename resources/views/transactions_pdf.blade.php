@@ -41,6 +41,7 @@
             <tr class="text-center justify-content-center">
                 <th scope="col-2">Buku yang Dipinjam</th>
                 <th scope="col-2">Nama Peminjam</th>
+                <th scope="col-2">Nama Petugas</th>
                 <th scope="col-2">Tanggal Peminjaman</th>
                 <th scope="col-2">Tanggal Pengembalian</th>
                 <th scope="col-2">Denda Keterlambatan</th>
@@ -59,6 +60,7 @@
                 <tr class="text-center">
                     <td>{{ $transaction->book->judul }}</td>
                     <td>{{ $transaction->member->nama }}</td>
+                    <td>{{ $transaction->user->nama }}</td>
                     <td>{{ $transaction->tgl_pinjam }}</td>
                     <td>{{ $transaction->tgl_pengembalian }}</td>
                     <td>Rp {{ number_format($transaction->denda) }}</td>
@@ -66,7 +68,7 @@
                 </tr>
             @endforeach
             <tr class="text-center">
-                <td colspan="4">Total Denda</td>
+                <td colspan="5">Total Denda</td>
                 <td colspan="2">Rp {{ number_format($total) }}</td>
             </tr>
         </tbody>

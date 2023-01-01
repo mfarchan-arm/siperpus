@@ -24,7 +24,10 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $guarded = ['id'];
+    use HasFactory;
+    protected $guarded = Null;
+    protected $primaryKey = 'nip';
+    protected $keyType = 'string';
 
     /**
      * The attributes that should be hidden for serialization.
@@ -48,6 +51,6 @@ class User extends Authenticatable
     
     public function transactions()
     {
-        return $this->hasMany(Transaction::class);
+        return $this->hasMany(Transaction::class,'user_nip','nip');
     }
 }

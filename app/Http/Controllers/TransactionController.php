@@ -51,7 +51,7 @@ class TransactionController extends Controller
     {
         Transaction::create([
             'book_id' => $request->book_id,
-            'user_id' => $request->user_id,
+            'user_nip' => $request->user_id,
             'member_nisn' => $request->member_id,
             'tgl_pinjam' => $request->tgl_pinjam,
             'tgl_kembali' => $request->tgl_kembali,
@@ -158,7 +158,7 @@ class TransactionController extends Controller
         if ($request->status == 'PEMINJAMAN') {
             Transaction::where('id', $request['id'])->update([
                 'book_id' => $request->book_id,
-                'user_id' => $request->user_id,
+                'user_nip' => $request->user_id,
                 'member_nisn' => $request->member_id,
                 'tgl_pinjam' => $request->tgl_pinjam,
                 'tgl_kembali' => $request->tgl_kembali,
@@ -171,7 +171,7 @@ class TransactionController extends Controller
         } else {
             Transaction::where('id', $request['id'])->update([
                 'book_id' => $request->book_id,
-                'user_id' => $request->user_id,
+                'user_nip' => $request->user_id,
                 'member_nisn' => $request->member_id,
                 'tgl_pinjam' => $request->tgl_pinjam,
                 'tgl_kembali' => $request->tgl_kembali,

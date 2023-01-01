@@ -19,16 +19,16 @@
     <div class="col-lg-8">
         <div class="card mb-4">
             <div class="card-body">
-                <form method="post" action="/dashboard/users/{{ $user->id }}" enctype="multipart/form-data">
+                <form method="post" action="/dashboard/users/{{ $user->nip }}" enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="row">
                         <div class="col-sm-3">
-                            <p class="mb-0">ID.</p>
+                            <p class="mb-0">NIP</p>
                         </div>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="id" required
-                                value="{{ old('id', $user->id) }}" readonly>
+                            <input type="text" class="form-control" name="nip" required placeholder="Masukkan NIP..."
+                                maxlength="18" id="intTextBox1" value="{{ old('nip', $user->nip) }}">
                         </div>
                     </div>
                     <hr>
@@ -42,17 +42,7 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <p class="mb-0">NIP</p>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="nip" required placeholder="Masukkan NIP..."
-                                maxlength="18" id="intTextBox1" value="{{ old('nip', $user->nip) }}">
-                        </div>
-                    </div>
-                    <br>
-                    <hr>
+
                     <div class="row">
                         <div class="col-sm-3">
                             <p class="mb-0">E-mail</p>

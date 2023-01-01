@@ -22,9 +22,9 @@ return new class extends Migration {
             $table->string('no_tlp');
             $table->string('nama_gambar');
             $table->string('email');
-            $table->timestamps('email_verified_at');
+            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('remember_token');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
