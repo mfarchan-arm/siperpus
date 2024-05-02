@@ -21,7 +21,7 @@
     @endif 
     <div class="card mb-3">
         <div class=" card-header">Data Kategori Rak</div>
-        <div class="card-body"></div>
+        <div class="card-body"></div> 
         <a href="/dashboard/raks/create" class="btn btn-lg btn-primary mx-4">Tambah Kategori Rak</a>
     </div>
 

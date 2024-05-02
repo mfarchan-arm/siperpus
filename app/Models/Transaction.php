@@ -14,16 +14,16 @@ class Transaction extends Model
 
     public function book()
     {
-        return $this->belongsTo(Book::class);
+        return $this->belongsTo(Book::class, 'book_id');
     }
 
     public function member()
     {
-        return $this->belongsTo(Member::class,'member_nisn','nisn');
+        return $this->belongsTo(Member::class,'member_id');
     }
     
     public function user()
     {
-        return $this->belongsTo(User::class,'user_nip','nip');
+        return $this->belongsTo(User::class,'user_id');
     }
 }

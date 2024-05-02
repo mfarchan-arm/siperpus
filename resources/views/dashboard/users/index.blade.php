@@ -75,7 +75,7 @@
 
                                     <form action="/dashboard/users/print" method="post" class="d-inline" target="_blank">
                                         @csrf
-                                        <input type='hidden' name='id' value='{{ $user->nip }}'>
+                                        <input type='hidden' name='id' value='{{ $user->id }}'>
                                         <button class="badge bg-primary border-0"
                                             onclick="return confirm('Cetak Kartu?')">Cetak
                                             Kartu</button>

@@ -33,7 +33,7 @@ class RakController extends Controller
     {
         return view('dashboard.raks.create', [
             'active' => 'raks',
-        ]); 
+        ]);  
     }
 
     /**

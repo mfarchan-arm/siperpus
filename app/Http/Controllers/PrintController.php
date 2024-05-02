@@ -23,7 +23,7 @@ class PrintController extends Controller
             'user' => User::where('id', $request->id)->first(),
             'active' => 'users',
         ]);
-    }
+    } 
 
     //PRINT KARTU ANGGOTA
     public function print_member(Request $request)

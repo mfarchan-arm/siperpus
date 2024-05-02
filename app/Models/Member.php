@@ -19,10 +19,4 @@ class Member extends Model
             return $query->where('nama', 'like', '%' . $search . '%');
         });
     }
-
-    
-    public function members()
-    {
-        return $this->hasMany(Transaction::class,'member_nisn','nisn');
-    }
 }
